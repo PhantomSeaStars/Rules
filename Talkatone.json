@@ -2,11 +2,6 @@
   "version": 1,
   "rules": [
     {
-      "domain": [
-
-      ]
-    },
-    {
       "domain_suffix": [
         "tktn.be",
         "tktn.at",
