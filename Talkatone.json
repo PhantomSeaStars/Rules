@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "tktn.be",
+        "tktn.at",
+        "tenor.com",
+        "talkatone.com",
+        "mobilefuse.com",
+        "inmobi.com"
+      ]
+    },
+    {
+      "ip_cidr": [
+        "50.117.27.0/24",
+        "69.46.75.0/24",
+        "205.164.56.0/24",
+        "205.164.56.29/24",
+        "63.251.124.0/24"
+      ]
+    }
+  ]
+}
