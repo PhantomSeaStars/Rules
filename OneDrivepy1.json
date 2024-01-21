@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rules": [
+            {
+                "domain": [
+                  "photos.onedrive.com"
+                ],
+                "domain_regex": [
+                  "https://onedrive.live.com/.*"
+                ]
+            }
+          ]
