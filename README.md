@@ -1,4 +1,4 @@
-Talkatone链接不支持UDP转发（比如HY2协议），往往在连接时需要采用ss这种TCP转发的协议，而本人平时喜用HY2低倍率节点，此规则可实现Talkatone在Sing-Box中分流设置。规则文件本身并不大，不做预编译，引用方式如下。
+Talkatone往往在连接时需要采用ss协议，而本人平时喜用HY2低倍率节点，此规则可实现Talkatone在Sing-Box中分流设置。规则文件本身并不大，不做预编译，引用方式如下。
 ```
       {
         "tag": "geosite-Talkatone",
