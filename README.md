@@ -4,7 +4,7 @@ Talkatone链接不支持UDP转发（比如HY2协议），往往在连接时需�
         "tag": "geosite-Talkatone",
         "type": "remote",
         "format": "source",
-        "url": "https://testingcf.jsdelivr.net/gh/PhantomSeaStars/Rule@main/Talkatone2.json",
+        "url": "https://testingcf.jsdelivr.net/gh/PhantomSeaStars/Rules@main/Talkatone.json",
         "download_detour": "direct"
       },
 ```
