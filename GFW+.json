@@ -10,16 +10,6 @@
       "domain": [
         "sing-box.sagernet.org"
       ]
-    },
-    {
-      "domain_suffix": [
-        ""
-      ]
-    },
-    {
-      "ip_cidr": [
-        ""
-      ]
     }
   ]
 }
