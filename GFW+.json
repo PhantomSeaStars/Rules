@@ -2,11 +2,6 @@
   "version": 1,
   "rules": [
     {
-      "domain_keyword": [
-        "sing-box"
-      ]
-    },
-    {
       "domain": [
         "sing-box.sagernet.org"
       ]
