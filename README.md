@@ -1,10 +1,10 @@
-Talkatone往往在连接时需要采用ss协议，而本人平时喜用HY2低倍率节点，此规则可实现Talkatone在Sing-Box中分流设置。规则文件本身并不大，不做预编译，引用方式如下。
+Talkatone往往在连接时需要采用ss协议，而本人平时喜用HY2低倍率节点，此规则可实现Talkatone在Sing-Box中分流设置。
 ```
       {
         "tag": "geosite-Talkatone",
         "type": "remote",
         "format": "source",
-        "url": "https://testingcf.jsdelivr.net/gh/PhantomSeaStars/Rules@main/Talkatone.json",
+        "url": "https://testingcf.jsdelivr.net/gh/PhantomSeaStars/Rules@main/Talkatone.srs",
         "download_detour": "direct"
       },
 ```
