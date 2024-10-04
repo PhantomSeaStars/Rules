@@ -1,11 +1,11 @@
 Talkatone往往在连接时需要采用ss协议，而本人平时喜用HY2低倍率节点，此规则可实现Talkatone在Sing-Box中分流设置。
 ```
       {
-        "tag": "geosite-Talkatone",
+        "tag": "<规则集的标签>",
         "type": "remote",
         "format": "source",
-        "url": "https://testingcf.jsdelivr.net/gh/PhantomSeaStars/Rules@main/Talkatone.srs",
-        "download_detour": "direct"
+        "url": "https://testingcf.jsdelivr.net/gh/PhantomSeaStars/Rules@main/talkatoneAPKandEXE.srs",
+        "download_detour": "<用来下载这个规则集的出站>"
       },
 ```
 
