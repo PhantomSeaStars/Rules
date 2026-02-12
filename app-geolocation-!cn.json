@@ -1,0 +1,45 @@
+{
+  "version": 4,
+  "rules": [
+    {
+        "package_name": [
+          "jp.konami.masterduel",
+          "jp.konami.YugiohOcgSupports",
+          "jp.co.ponos.battlecatstw",
+          "com.zhiliaoapp.musically",
+          "com.mb.android",
+          "com.google.android.youtube",
+          "com.google.android.apps.bard",
+          "com.android.vending",
+          "com.google.android.gms",
+          "com.google.android.gsf",
+          "com.google.android.googlequicksearchbox",
+          "com.google.android.gm",
+          "com.google.android.apps.authenticator2",
+          "com.google.android.inputmethod.latin",
+          "com.google.android.apps.translate",
+          "com.google.android.apps.nbu.files",
+          "com.binance.dev",
+          "org.telegram.messenger",
+          "com.twitter.android",
+          "com.facebook.katana",
+          "com.openai.chatgpt",
+          "com.microsoft.skydrive",
+          "com.microsoft.office.outlook",
+          "com.microsoft.office.officehubrow"
+        ],
+        "process_name": [
+          "steamwebhelper.exe",
+          "steam.exe",
+          "steamservice.exe",
+          "masterduel.exe",
+          "electron.exe",
+          "TerminusPlayer.exe",
+          "Emby.Theater.exe",
+          "EmbyServer.exe",
+          "embytray.exe",
+          "QtWebEngineProcess.exe"
+        ]
+    }
+  ]
+}
