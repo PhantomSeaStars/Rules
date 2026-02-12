@@ -1,10 +1,1015 @@
 使用方法
 ```
+{
+  "log": {
+    "disabled": false,
+    "level": "warn",
+    "timestamp": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "./Cache.db",
+      "store_fakeip": false,
+      "store_rdrc": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "WebUI",
+      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "☘️ 默认",
+      "secret": "",
+      "default_mode": "🕊 规则分流",
+      "access_control_allow_origin": "192.168.0.0/16",
+      "access_control_allow_private_network": true
+    }
+  },
+  "dns": {
+    "final": "🌱 代理DNS",
+    "strategy": "ipv4_only",
+    "disable_cache": false,
+    "disable_expire": false,
+    "independent_cache": false,
+    "cache_capacity": 0,
+    "reverse_mapping": false,
+    "servers": [
       {
-        "tag": "<规则集的标签>",
-        "type": "remote",
-        "format": "source",
-        "url": "https://testingcf.jsdelivr.net/gh/PhantomSeaStars/Rules@main/talkatoneAPKandEXE.srs",
-        "download_detour": "<用来下载这个规则集的出站>"
+        "type": "local",
+        "tag": "🧶 直连DNS"
       },
+      {
+        "type": "tls",
+        "tag": "🌱 代理DNS",
+        "server":  "8.8.8.8",
+        "detour": "☘️ 默认"
+      },
+      {
+        "type": "hosts",
+        "tag": "🎭 Hosts",
+        "predefined": {
+          "api.-----------.work": "---.--.--.---",
+          "www.-----------.work": "---.--.--.---"
+        }
+      }
+    ],
+    "rules": [
+      {
+        "ip_accept_any": true,
+        "server": "🎭 Hosts"
+      },
+      {
+        "clash_mode": "🪡 全局直连",
+        "server": "🧶 直连DNS"
+      },
+      {
+        "clash_mode": "🍀 全局代理",
+        "server": "🌱 代理DNS"
+      },
+      {
+        "rule_set": "APP-🌐 !China",
+        "server": "🌱 代理DNS"
+      },
+      {
+        "rule_set": "APP-🇨🇳 China",
+        "server": "🧶 直连DNS"
+      },
+      {
+        "rule_set": [
+          "site-📞 Talkatone",
+          "site-🎮 Category Games",
+          "site-🎮 Dmm",
+          "site-📝 Bahamut",
+          "site-🍎 Apple",
+          "site-🛒 Amazon",
+          "site-▶️ YouTube",
+          "site-🔍 Google",
+          "site-🎵 TikTok",
+          "site-🪙 Binance",
+          "site-✈️ Telegram",
+          "site-𝕏 Twitter",
+          "site-👤 Facebook",
+          "site-🤖 Openai",
+          "site-☁️ OneDrive",
+          "site-⌨️ GitHub",
+          "site-💠 Microsoft",
+          "site-🇳 Netflix",
+          "site-🐭 Disney+",
+          "site-💻 HBO",
+          "site-💻 PrimeVideo",
+          "site-🎼 Spotify"
+        ],
+        "server": "🌱 代理DNS"
+      },
+      {
+        "rule_set": [
+          "site-🐧 Tencent",
+          "site-💰 Alibaba",
+          "site-📺 Bilibili"
+        ],
+        "server": "🧶 直连DNS"
+      },
+      {
+        "rule_set": "site-🇨🇳 China",
+        "server": "🧶 直连DNS"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": "site-🌐 !China",
+            "invert": true
+          },
+          {
+            "rule_set": "IP-🇨🇳 China"
+          }
+        ],
+        "server": "🌱 代理DNS",
+        "client_subnet": "1.80.0.0/13"
+      }
+    ]
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "🚀 1-13",
+      "interface_name": "🚀 1-13",
+      "address": [
+        "172.18.0.1/30"
+      ],
+      "mtu": 1500,
+      "stack": "mixed",
+      "auto_route": true,
+      "loopback_address": [
+        "10.7.0.1"
+      ],
+      "strict_route": true,
+      "route_address": [
+        "0.0.0.0/1",
+        "128.0.0.0/1"
+      ],
+      "route_exclude_address": [
+        "192.168.0.0/16"
+      ],
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "mixed",
+      "tag": "♻️ 局域网流转",
+      "listen": "0.0.0.0",
+      "listen_port": 5353
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "☘️ 默认",
+      "outbounds": ["🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"],
+      "default": "🇺🇸 美国"
+    },
+    {
+      "type": "selector",
+      "tag": "🎣 漏网之鱼",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "🇺🇸 美国",
+      "outbounds": [
+        "🇺🇸🔧 美国 SNI05",
+        "🇺🇸🔧 美国 SNI07",
+        "🇺🇸🔧 美国 SNI10"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "🇯🇵 日本",
+      "outbounds": []
+    },
+    {
+      "type": "selector",
+      "tag": "🇺🇳 其它",
+      "outbounds": []
+    },
+    {
+      "type": "selector",
+      "tag": "🌕 云服务器",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"],
+      "default": "🪢 直连"
+    },
+    {
+      "type": "selector",
+      "tag": "🎮 Games",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"],
+      "default": "🇯🇵 日本"
+    },
+    {
+      "type": "selector",
+      "tag": "📝 Bahamut",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"],
+      "default": "🇯🇵 日本"
+    },
+    {
+      "type": "selector",
+      "tag": "🪙 Binance",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"],
+      "default": "🇯🇵 日本"
+    },
+    {
+      "type": "selector",
+      "tag": "📞 Talkatone",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "🐧 Tencent",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"],
+      "default": "🪢 直连"
+    },
+    {
+      "type": "selector",
+      "tag": "✈️ Telegram",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "𝕏 Twitter",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "👤 Facebook",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "🤖 Openai",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "💰 Alibaba",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"],
+      "default": "🪢 直连"
+    },
+    {
+      "type": "selector",
+      "tag": "🍎 Apple",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"],
+      "default": "🪢 直连"
+    },
+    {
+      "type": "selector",
+      "tag": "🛒 Amazon",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "☁️ OneDrive",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "⌨️ GitHub",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "💠 Microsoft",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "🍿 EMBY",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"],
+      "default": "🪢 直连"
+    },
+    {
+      "type": "selector",
+      "tag": "📺 Bilibili",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"],
+      "default": "🪢 直连"
+    },
+    {
+      "type": "selector",
+      "tag": "▶️ YouTube",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "🎵 TikTok",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "🇳 Netflix",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "🐭 Disney+",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "💻 Streaming",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "🔍 Google",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "selector",
+      "tag": "🎼 Spotify",
+      "outbounds": ["☘️ 默认", "🇺🇸 美国", "🇯🇵 日本", "🇺🇳 其它", "🪢 直连"]
+    },
+    {
+      "type": "urltest",
+      "tag": "🐉 测速",
+      "outbounds": [
+        "🇺🇸🔧 美国 SNI05",
+        "🇺🇸🔧 美国 SNI07",
+        "🇺🇸🔧 美国 SNI10"
+      ],
+      "interval": "1m"
+    },
+    {
+      "type": "direct",
+      "tag": "🪢 直连"
+    },
+    {
+      "tag": "🇺🇸🔧 美国 SNI05",
+      "type": "anytls",
+      "server": "--------------",
+      "server_port": 443,
+      "password": "-----------",
+      "tls": {
+        "enabled": true,
+        "server_name": "----------",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "-----------------",
+          "short_id": "-------------"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "domain_resolver": "🎭 Hosts"
+    },
+    {
+      "tag": "🇺🇸🔧 美国 SNI07",
+      "type": "anytls",
+      "server": "---------------",
+      "server_port": 443,
+      "password": "-----------",
+      "tls": {
+        "enabled": true,
+        "server_name": "----------",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "-----------",
+          "short_id": "------------"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "domain_resolver": "🎭 Hosts"
+    },
+    {
+      "tag": "🇺🇸🔧 美国 SNI10",
+      "type": "anytls",
+      "server": "------------------",
+      "server_port": 443,
+      "password": "----------",
+      "tls": {
+        "enabled": true,
+        "server_name": "---------",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "----------",
+          "short_id": "----------"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "domain_resolver": "🎭 Hosts"
+    }
+  ],
+  "route": {
+    "final": "🎣 漏网之鱼",
+    "auto_detect_interface": true,
+    "default_domain_resolver": "🌱 代理DNS",
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "protocol": "dns"
+          },
+          {
+            "port": 53
+          }
+        ],
+        "action": "hijack-dns"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "🪢 直连"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 853
+          },
+          {
+            "network": "udp",
+            "port": 443
+          },
+          {
+            "protocol": "stun"
+          }
+        ],
+        "action": "reject"
+      },
+      {
+        "rule_set": "site-🛑 Ads All",
+        "method": "drop",
+        "action": "reject"
+      },
+      {
+        "clash_mode": "🪡 全局直连",
+        "outbound": "🪢 直连"
+      },
+      {
+        "clash_mode": "🍀 全局代理",
+        "outbound": "☘️ 默认"
+      },
+      {
+        "package_name": "com.talkatone.android",
+        "outbound": "📞 Talkatone"
+      },
+      {
+        "domain_suffix": "phantomseastars.work",
+        "outbound": "🌕 云服务器"
+      },
+      {
+        "ip_cidr": "154.44.21.0/24",
+        "outbound": "🌕 云服务器"
+      },
+      {
+        "domain_suffix": "storage.live.com",
+        "outbound": "🪢 直连"
+      },
+      {
+        "domain_suffix": "files.1drv.com",
+        "outbound": "🪢 直连"
+      },
+      {
+        "package_name": "jp.konami.masterduel",
+        "outbound": "🎮 Games"
+      },
+      {
+        "package_name": "jp.konami.YugiohOcgSupports",
+        "outbound": "🎮 Games"
+      },
+      {
+        "package_name": "jp.co.ponos.battlecatstw",
+        "outbound": "🎮 Games"
+      },
+      {
+        "process_name": "steamwebhelper.exe",
+        "outbound": "🎮 Games"
+      },
+      {
+        "process_name": "steam.exe",
+        "outbound": "🎮 Games"
+      },
+      {
+        "process_name": "steamservice.exe",
+        "outbound": "🎮 Games"
+      },
+      {
+        "process_name": "masterduel.exe",
+        "outbound": "🎮 Games"
+      },
+      {
+        "domain_suffix": "konami.com",
+        "outbound": "🎮 Games"
+      },
+      {
+        "domain_suffix": "konami.net",
+        "outbound": "🎮 Games"
+      },
+      {
+        "package_name": "com.tencent.mm",
+        "outbound": "🐧 Tencent"
+      },
+      {
+        "package_name": "com.tencent.mobileqq",
+        "outbound": "🐧 Tencent"
+      },
+      {
+        "package_name": "com.tencent.wework",
+        "outbound": "🐧 Tencent"
+      },
+      {
+        "process_name": "Weixin.exe",
+        "outbound": "🐧 Tencent"
+      },
+      {
+        "process_name": "QQ.exe",
+        "outbound": "🐧 Tencent"
+      },
+      {
+        "process_name": "WXWork.exe",
+        "outbound": "🐧 Tencent"
+      },
+      {
+        "package_name": "com.taobao.taobao",
+        "outbound": "💰 Alibaba"
+      },
+      {
+        "package_name": "com.eg.android.AlipayGphone",
+        "outbound": "💰 Alibaba"
+      },
+      {
+        "process_name": "electron.exe",
+        "outbound": "🍿 EMBY"
+      },
+      {
+        "process_name": "TerminusPlayer.exe",
+        "outbound": "🍿 EMBY"
+      },
+      {
+        "process_name": "Emby.Theater.exe",
+        "outbound": "🍿 EMBY"
+      },
+      {
+        "process_name": "EmbyServer.exe",
+        "outbound": "🍿 EMBY"
+      },
+      {
+        "process_name": "embytray.exe",
+        "outbound": "🍿 EMBY"
+      },
+      {
+        "process_name": "QtWebEngineProcess.exe",
+        "outbound": "🍿 EMBY"
+      },
+      {
+        "package_name": "com.mb.android",
+        "outbound": "🍿 EMBY"
+      },
+      {
+        "package_name": "tv.danmaku.bili",
+        "outbound": "📺 Bilibili"
+      },
+      {
+        "package_name": "com.google.android.youtube",
+        "outbound": "▶️ YouTube"
+      },
+      {
+        "package_name": "com.google.android.apps.bard",
+        "outbound": "🔍 Google"
+      },
+      {
+        "package_name": "com.android.vending",
+        "outbound": "🔍 Google"
+      },
+      {
+        "package_name": "com.google.android.gms",
+        "outbound": "🔍 Google"
+      },
+      {
+        "package_name": "com.google.android.gsf",
+        "outbound": "🔍 Google"
+      },
+      {
+        "package_name": "com.google.android.googlequicksearchbox",
+        "outbound": "🔍 Google"
+      },
+      {
+        "package_name": "com.google.android.gm",
+        "outbound": "🔍 Google"
+      },
+      {
+        "package_name": "com.google.android.apps.authenticator2",
+        "outbound": "🔍 Google"
+      },
+      {
+        "package_name": "com.google.android.inputmethod.latin",
+        "outbound": "🔍 Google"
+      },
+      {
+        "package_name": "com.google.android.apps.translate",
+        "outbound": "🔍 Google"
+      },
+      {
+        "package_name": "com.google.android.apps.nbu.files",
+        "outbound": "🔍 Google"
+      },
+      {
+        "package_name": "com.zhiliaoapp.musically",
+        "outbound": "🎵 TikTok"
+      },
+      {
+        "package_name": "com.binance.dev",
+        "outbound": "🪙 Binance"
+      },
+      {
+        "package_name": "org.telegram.messenger",
+        "outbound": "✈️ Telegram"
+      },
+      {
+        "package_name": "com.twitter.android",
+        "outbound": "𝕏 Twitter"
+      },
+      {
+        "package_name": "com.facebook.katana",
+        "outbound": "👤 Facebook"
+      },
+      {
+        "package_name": "com.openai.chatgpt",
+        "outbound": "🤖 Openai"
+      },
+      {
+        "package_name": "com.microsoft.skydrive",
+        "outbound": "☁️ OneDrive"
+      },
+      {
+        "package_name": "com.microsoft.office.outlook",
+        "outbound": "💠 Microsoft"
+      },
+      {
+        "package_name": "com.microsoft.office.officehubrow",
+        "outbound": "💠 Microsoft"
+      },
+      {
+        "rule_set": "site-📞 Talkatone",
+        "outbound": "📞 Talkatone"
+      },
+      {
+        "rule_set": "IP-📞 Talkatone",
+        "outbound": "📞 Talkatone"
+      },
+      {
+        "rule_set": "site-🎮 Category Games",
+        "outbound": "🎮 Games"
+      },
+      {
+        "rule_set": "site-🎮 Dmm",
+        "outbound": "🎮 Games"
+      },
+      {
+        "rule_set": "site-📝 Bahamut",
+        "outbound": "📝 Bahamut"
+      },
+      {
+        "rule_set": "site-🐧 Tencent",
+        "outbound": "🐧 Tencent"
+      },
+      {
+        "rule_set": "site-💰 Alibaba",
+        "outbound": "💰 Alibaba"
+      },
+      {
+        "rule_set": "site-🍎 Apple",
+        "outbound": "🍎 Apple"
+      },
+      {
+        "rule_set": "site-🛒 Amazon",
+        "outbound": "🛒 Amazon"
+      },
+      {
+        "rule_set": "site-📺 Bilibili",
+        "outbound": "📺 Bilibili"
+      },
+      {
+        "rule_set": "site-▶️ YouTube",
+        "outbound": "▶️ YouTube"
+      },
+      {
+        "rule_set": "site-🔍 Google",
+        "outbound": "🔍 Google"
+      },
+      {
+        "rule_set": "site-🎵 TikTok",
+        "outbound": "🎵 TikTok"
+      },
+      {
+        "rule_set": "site-🪙 Binance",
+        "outbound": "🪙 Binance"
+      },
+      {
+        "rule_set": "site-✈️ Telegram",
+        "outbound": "✈️ Telegram"
+      },
+      {
+        "rule_set": "site-𝕏 Twitter",
+        "outbound": "𝕏 Twitter"
+      },
+      {
+        "rule_set": "site-👤 Facebook",
+        "outbound": "👤 Facebook"
+      },
+      {
+        "rule_set": "site-🤖 Openai",
+        "outbound": "🤖 Openai"
+      },
+      {
+        "rule_set": "site-☁️ OneDrive",
+        "outbound": "☁️ OneDrive"
+      },
+      {
+        "rule_set": "site-⌨️ GitHub",
+        "outbound": "⌨️ GitHub"
+      },
+      {
+        "rule_set": "site-💠 Microsoft",
+        "outbound": "💠 Microsoft"
+      },
+      {
+        "rule_set": "site-🇳 Netflix",
+        "outbound": "🇳 Netflix"
+      },
+      {
+        "rule_set": "site-🐭 Disney+",
+        "outbound": "🐭 Disney+"
+      },
+      {
+        "rule_set": "site-💻 HBO",
+        "outbound": "💻 Streaming"
+      },
+      {
+        "rule_set": "site-💻 PrimeVideo",
+        "outbound": "💻 Streaming"
+      },
+      {
+        "rule_set": "site-🎼 Spotify",
+        "outbound": "🎼 Spotify"
+      },
+      {
+        "rule_set": "site-🇨🇳 China",
+        "outbound": "🪢 直连"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": "IP-🇨🇳 China"
+          },
+          {
+            "rule_set": "site-🌐 !China",
+            "invert": true
+          }
+        ],
+        "outbound": "🪢 直连"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": "site-🛑 Ads All",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🎵 TikTok",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tiktok.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🎮 Category Games",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-games.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🎮 Dmm",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-dmm.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-📝 Bahamut",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-bahamut.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🐧 Tencent",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tencent.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-✈️ Telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-telegram.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-𝕏 Twitter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-twitter.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-👤 Facebook",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-facebook.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🤖 Openai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-openai.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-💰 Alibaba",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-alibaba.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🍎 Apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🛒 Amazon",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-amazon.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-☁️ OneDrive",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-onedrive.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-💠 Microsoft",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-microsoft.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-⌨️ GitHub",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-github.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-📺 Bilibili",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-bilibili.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-▶️ YouTube",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-youtube.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🇳 Netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-netflix.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🐭 Disney+",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-disney.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-💻 HBO",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-hbo.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-💻 PrimeVideo",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-primevideo.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🔍 Google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🎼 Spotify",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-spotify.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "IP-🇨🇳 China",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🇨🇳 China",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🌐 !China",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-🪙 Binance",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/geosite-binance.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "site-📞 Talkatone",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/geosite-talkatone.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "IP-📞 Talkatone",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/geoip-talkatone.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "APP-🇨🇳 China",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/app-geolocation-cn.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "APP-🌐 !China",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/app-geolocation-!cn.srs",
+        "download_detour": "☘️ 默认"
+      }
+    ]
+  }
+}
 ```
