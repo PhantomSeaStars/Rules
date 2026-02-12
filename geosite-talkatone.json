@@ -3,6 +3,11 @@
   "rules": [
     {
       "domain_suffix": [
+        "agkn.com",
+        "cohere.com",
+        "crashlytics.com",
+        "inner-active.mobi",
+        "kochava.com",
         "inmobi.com",
         "mobilefuse.com",
         "talkatone.com",
