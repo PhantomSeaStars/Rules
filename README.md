@@ -1,4 +1,24 @@
 使用方法
+
+```
+      {
+        "tag": "site-📞 Talkatone",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/geosite-talkatone.srs",
+        "download_detour": "☘️ 默认"
+      },
+      {
+        "tag": "IP-📞 Talkatone",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/geoip-talkatone.srs",
+        "download_detour": "☘️ 默认"
+      },
+```
+
+参考配置
+
 ```
 {
   "log": {
