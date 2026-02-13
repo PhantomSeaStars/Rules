@@ -10,6 +10,7 @@
           "com.mb.android",
           "com.google.android.youtube",
           "com.google.android.apps.bard",
+          "com.google.android.apps.labs.language.tailwind",
           "com.android.vending",
           "com.google.android.gms",
           "com.google.android.gsf",
@@ -42,4 +43,5 @@
         ]
     }
   ]
+
 }
