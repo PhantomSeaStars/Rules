@@ -3,6 +3,8 @@
   "rules": [
     {
         "package_name": [
+          "com.amazon.mShop.android.shopping",
+          "cn.amazon.mShop.android",
           "jp.konami.masterduel",
           "jp.konami.YugiohOcgSupports",
           "jp.co.ponos.battlecatstw",
