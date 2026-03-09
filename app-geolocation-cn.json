@@ -8,7 +8,8 @@
           "com.tencent.wework",
           "com.taobao.taobao",
           "com.eg.android.AlipayGphone",
-          "tv.danmaku.bili"
+          "tv.danmaku.bili",
+          "com.hswl.car_owner"
         ],
         "process_name": [
           "Weixin.exe",
