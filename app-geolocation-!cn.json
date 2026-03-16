@@ -30,7 +30,8 @@
           "com.microsoft.skydrive",
           "com.microsoft.office.outlook",
           "com.microsoft.office.officehubrow",
-          "mega.privacy.android.app"
+          "mega.privacy.android.app",
+          "hk.com.hsbc.hsbchkmobilebanking"
         ],
         "process_name": [
           "steamwebhelper.exe",
