@@ -29,7 +29,8 @@
           "com.openai.chatgpt",
           "com.microsoft.skydrive",
           "com.microsoft.office.outlook",
-          "com.microsoft.office.officehubrow"
+          "com.microsoft.office.officehubrow",
+          "mega.privacy.android.app"
         ],
         "process_name": [
           "steamwebhelper.exe",
