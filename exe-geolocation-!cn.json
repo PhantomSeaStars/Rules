@@ -1,0 +1,20 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "process_name": [
+        "steamwebhelper.exe",
+        "steam.exe",
+        "steamservice.exe",
+        "masterduel.exe",
+        "electron.exe",
+        "TerminusPlayer.exe",
+        "Emby.Theater.exe",
+        "EmbyServer.exe",
+        "embytray.exe",
+        "QtWebEngineProcess.exe"
+      ]
+    }
+  ]
+
+}
