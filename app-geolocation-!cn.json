@@ -33,7 +33,17 @@
           "mega.privacy.android.app",
           "com.pikcloud.pikpak",
           "com.google.android.apps.docs",
-          "hk.com.hsbc.hsbchkmobilebanking"
+          "hk.com.hsbc.hsbchkmobilebanking",
+          "us.mathlab.android.calc.edu",
+          "com.microsoft.office.excel",
+          "com.microsoft.office.onenote",
+          "com.talkatone.android",
+          "com.microsoft.office.word",
+          "com.microsoft.office.powerpoint",
+          "com.spotify.music",
+          "com.google.android.apps.googlevoice",
+          "com.x8bit.bitwarden",
+          "com.positron_it.zlib"
         ],
         "process_name": [
           "steamwebhelper.exe",
