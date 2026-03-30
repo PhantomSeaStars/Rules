@@ -197,7 +197,8 @@
         "com.miui.core",
         "com.miui.home",
         "com.xiaomi.aiasst.service",
-        "com.xiaomi.digitalkey"
+        "com.xiaomi.digitalkey",
+        "com.alibaba.wireless"
       ]
     }
   ]
