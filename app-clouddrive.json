@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "package_name": [
+        "mega.privacy.android.app",
+        "com.pikcloud.pikpak",
+        "com.microsoft.skydrive",
+        "com.google.android.apps.docs"
+      ]
+    }
+  ]
+}

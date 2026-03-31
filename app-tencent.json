@@ -1,0 +1,12 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "package_name": [
+        "com.tencent.mm",
+        "com.tencent.mobileqq",
+        "com.tencent.wework"
+      ]
+    }
+  ]
+}

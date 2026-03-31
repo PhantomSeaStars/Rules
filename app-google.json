@@ -1,0 +1,20 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "package_name": [
+        "com.google.android.apps.bard",
+        "com.google.android.apps.labs.language.tailwind",
+        "com.android.vending",
+        "com.google.android.gms",
+        "com.google.android.gsf",
+        "com.google.android.googlequicksearchbox",
+        "com.google.android.gm",
+        "com.google.android.apps.authenticator2",
+        "com.google.android.inputmethod.latin",
+        "com.google.android.apps.translate",
+        "com.google.android.apps.nbu.files"
+      ]
+    }
+  ]
+}

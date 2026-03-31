@@ -1,0 +1,11 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "domain_suffix": [
+        "storage.live.com",
+        "files.1drv.com"
+      ]
+    }
+  ]
+}

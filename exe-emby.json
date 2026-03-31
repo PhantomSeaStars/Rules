@@ -1,0 +1,15 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "process_name": [
+        "electron.exe",
+        "TerminusPlayer.exe",
+        "Emby.Theater.exe",
+        "EmbyServer.exe",
+        "embytray.exe",
+        "QtWebEngineProcess.exe"
+      ]
+    }
+  ]
+}

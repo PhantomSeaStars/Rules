@@ -1,0 +1,11 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "package_name": [
+        "com.amazon.mShop.android.shopping",
+        "cn.amazon.mShop.android"
+      ]
+    }
+  ]
+}

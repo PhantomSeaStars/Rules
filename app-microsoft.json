@@ -1,0 +1,15 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "package_name": [
+        "com.microsoft.office.outlook",
+        "com.microsoft.office.officehubrow",
+        "com.microsoft.office.excel",
+        "com.microsoft.office.onenote",
+        "com.microsoft.office.word",
+        "com.microsoft.office.powerpoint"
+      ]
+    }
+  ]
+}

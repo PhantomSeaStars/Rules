@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "process_name": [
+        "steamwebhelper.exe",
+        "steam.exe",
+        "steamservice.exe",
+        "masterduel.exe"
+      ]
+    }
+  ]
+}

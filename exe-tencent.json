@@ -1,0 +1,12 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "process_name": [
+        "Weixin.exe",
+        "QQ.exe",
+        "WXWork.exe"
+      ]
+    }
+  ]
+}

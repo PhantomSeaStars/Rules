@@ -1,0 +1,12 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "package_name": [
+        "jp.konami.masterduel",
+        "jp.konami.YugiohOcgSupports",
+        "jp.co.ponos.battlecatstw"
+      ]
+    }
+  ]
+}
