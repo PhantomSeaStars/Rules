@@ -13,6 +13,8 @@
         "EmbyServer.exe",
         "embytray.exe",
         "QtWebEngineProcess.exe"
+        "crashpad_handler.exe",
+        "WetypeInstaller.exe"
       ]
     }
   ]
