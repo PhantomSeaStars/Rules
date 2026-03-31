@@ -5,7 +5,9 @@
       "process_name": [
         "Weixin.exe",
         "QQ.exe",
-        "WXWork.exe"
+        "WXWork.exe",
+        "crashpad_handler.exe",
+        "WetypeInstaller.exe"
       ]
     }
   ]
