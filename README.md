@@ -5,20 +5,19 @@
         "tag": "site-📞 Talkatone",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/geosite-talkatone.srs",
+        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/geosite-talkatone.srs",
         "download_detour": "☘️ 默认"
       },
       {
         "tag": "IP-📞 Talkatone",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/geoip-talkatone.srs",
+        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/geoip-talkatone.srs",
         "download_detour": "☘️ 默认"
       }
 ```
 
-基于sing-box-1.14.0-alpha.12参考配置。
-因为开始倒腾正则表达式，规则量小到足以让我写进配置文件本身，挺好用的供参考。
+基于sing-box-1.14.0-alpha.12的参考配置。
 
 ```
 {
@@ -53,9 +52,9 @@
       }
     ],
     "rules": [{
-        "domain_suffix": "666.work",
+        "domain_suffix": "私有域名.work",
         "action": "predefined",
-        "answer": "*.666.work. IN A 66.666.666.666"
+        "answer": "*.私有域名.work. IN A 私有IP"
       },
       {
         "rule_set": "Site-🛑 Ads All",
@@ -70,11 +69,15 @@
         "server": "🌱 代理DNS"
       },
       {
-        "rule_set": ["APP-🇨🇳 China", "Site-🇨🇳 China"],
+        "rule_set": "V5-🇨🇳 ChinaAPP",
         "server": "🧶 直连DNS"
       },
       {
-        "rule_set": "Site-🌐 !China",
+        "rule_set": "Site-🇨🇳 China",
+        "server": "🧶 直连DNS"
+      },
+      {
+        "rule_set": "Site-🌐 Global",
         "invert": true,
         "action": "evaluate",
         "server": "🌱 代理DNS",
@@ -84,7 +87,7 @@
         "type": "logical",
         "mode": "and",
         "rules": [{
-            "rule_set": "Site-🌐 !China",
+            "rule_set": "Site-🌐 Global",
             "invert": true
           },
           {
@@ -165,28 +168,126 @@
     },
     {
       "tag": "🇭🇰 TRI 九龙1🪢",
-      "type": "anytls"
+      "type": "anytls",
+      "server": "私有IP",
+      "min_idle_session": 4,
+      "udp_fragment": true,
+      "server_port": 443,
+      "password": "用户名",
+      "tls": {
+        "enabled": true,
+        "server_name": "SNI",
+        "alpn": ["h2", "http/1.1"],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "密钥",
+          "short_id": "ID"
+        }
+      }
     },
     {
       "tag": "🇭🇰 TRI 九龙2🪢",
-      "type": "anytls"
+      "type": "anytls",
+      "server": "私有IP",
+      "min_idle_session": 4,
+      "udp_fragment": true,
+      "server_port": 443,
+      "password": "用户名",
+      "tls": {
+        "enabled": true,
+        "server_name": "SNI",
+        "alpn": ["h2", "http/1.1"],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "密钥",
+          "short_id": "ID"
+        }
+      }
     },
     {
       "tag": "🇺🇸 4837 洛杉矶🪢",
-      "type": "anytls"
+      "type": "anytls",
+      "server": "私有IP",
+      "min_idle_session": 4,
+      "udp_fragment": true,
+      "server_port": 443,
+      "password": "用户名",
+      "tls": {
+        "enabled": true,
+        "server_name": "SNI",
+        "alpn": ["h2", "http/1.1"],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "密钥",
+          "short_id": "ID"
+        }
+      }
     },
     {
       "tag": "🇺🇸 TRI 洛杉矶♻️",
       "type": "shadowsocks",
+      "server": "私有IP",
+      "server_port": 20000,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "密钥",
+      "tcp_fast_open": true,
+      "udp_fragment": true,
+      "multiplex": {
+        "enabled": true,
+        "max_connections": 4,
+        "min_streams": 4
+      },
       "detour": "♻️ 中转选择"
     },
     {
       "tag": "🇯🇵 INTL 千叶🪢",
       "type": "anytls",
+      "server": "私有IP",
+      "min_idle_session": 4,
+      "udp_fragment": true,
+      "server_port": 443,
+      "password": "用户名",
+      "tls": {
+        "enabled": true,
+        "server_name": "SNI",
+        "alpn": ["h2", "http/1.1"],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "密钥",
+          "short_id": "ID"
+        }
+      }
     },
     {
       "tag": "🇯🇵 TRI 千叶♻️",
       "type": "shadowsocks",
+      "server": "私有IP",
+      "server_port": 20000,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "密钥",
+      "tcp_fast_open": true,
+      "udp_fragment": true,
+      "multiplex": {
+        "enabled": true,
+        "max_connections": 4,
+        "min_streams": 4
+      },
       "detour": "♻️ 中转选择"
     },
     {
@@ -242,10 +343,6 @@
         "action": "reject"
       },
       {
-        "rule_set": "Site-🛑 Ads All",
-        "action": "reject"
-      },
-      {
         "clash_mode": "🪡 全局直连",
         "outbound": "🪢 本地直连"
       },
@@ -254,24 +351,36 @@
         "outbound": "☘️ 默认"
       },
       {
-        "domain_regex": "^(.*\\.)?(pool\\.ntp|storage\\.live|files\\.1drv)(\\..*)?$",
+        "domain_regex": "^(.*\\.)?(pool\\.ntp|私有域名|storage\\.live|files\\.1drv)(\\..*)?$",
         "outbound": "🪢 本地直连"
       },
       {
-        "rule_set": "APP-🇨🇳 China",
-        "outbound": "🪢 本地直连"
-      },
-      {
-        "rule_set": "Site-💵 HSBC",
-        "outbound": "💵 汇丰香港"
-      },
-      {
-        "rule_set": "Site-🪙 日游币安SIM",
+        "rule_set": "V5-🎮 K社",
         "outbound": "🪙 日游币安SIM"
       },
       {
-        "rule_set": "Site-✈️ 电报油管",
+        "rule_set": "V5-💵 HSBC",
+        "outbound": "💵 汇丰香港"
+      },
+      {
+        "rule_set": "V5-📞 虚拟SIM",
+        "outbound": "🪙 日游币安SIM"
+      },
+      {
+        "rule_set": "V5-✈️ 电报",
         "outbound": "✈️ 电报油管"
+      },
+      {
+        "rule_set": "V5-▶️ 油管",
+        "outbound": "✈️ 电报油管"
+      },
+      {
+        "rule_set": "V5-🪙 币安",
+        "outbound": "🪙 日游币安SIM"
+      },
+      {
+        "rule_set": "V5-🇨🇳 ChinaAPP",
+        "outbound": "🪢 本地直连"
       },
       {
         "rule_set": "Site-🇨🇳 China",
@@ -284,7 +393,7 @@
             "rule_set": "IP-🇨🇳 China"
           },
           {
-            "rule_set": "Site-🌐 !China",
+            "rule_set": "Site-🌐 Global",
             "invert": true
           }
         ],
@@ -310,72 +419,52 @@
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
       },
       {
-        "tag": "Site-🌐 !China",
+        "tag": "Site-🌐 Global",
         "type": "remote",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs"
       },
       {
-        "type": "inline",
-        "tag": "Site-💵 HSBC",
-        "rules": [{
-            "package_name_regex": "^(.*\\.)?hsbc[a-z-]*(\\..*)?$"
-          },
-          {
-            "domain_regex": "^(?:.*\\.)?hsbc(?:[a-z-]*\\.[a-z.]+)?$"
-          }
-        ]
+        "tag": "V5-💵 HSBC",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-hsbc.srs"
       },
       {
-        "type": "inline",
-        "tag": "Site-✈️ 电报油管",
-        "rules": [{
-            "package_name_regex": "^.+\\.(?:telegram\\..+|youtube)$"
-          },
-          {
-            "domain_regex": [
-              "^(?:.*\\.)?(?:cdn-telegram|telegram[a-z-]*|(?:wide-|with)?youtube[a-z-]*)\\.[a-z.]+$",
-              "^(?:.*\\.)?(?:comments\\.app|contest\\.com|fragment\\.com|ggpht\\.[a-z.]+|googlevideo\\.com|graph\\.org|quiz\\.directory|t\\.me|tdesktop\\.com|telega\\.one|telegra\\.ph|telesco\\.pe|tg\\.dev|ton\\.org|tx\\.me|usercontent\\.dev|youtu\\.be|yt\\.be|yt3\\.googleusercontent\\.com|ytimg\\.com)$"
-            ]
-          }
-        ]
+        "tag": "V5-▶️ 油管",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-youtube.srs"
       },
       {
-        "type": "inline",
-        "tag": "Site-🪙 日游币安SIM",
-        "rules": [{
-            "package_name_regex": [
-              "^(.*\\.)?(talkatone|binance|konami|co\\.ponos)(\\..*)?$"
-            ]
-          },
-          {
-            "domain_regex": [
-              "^(?:.*\\.)?(?:1inch|aave|arbitrum|arweave|avax|binance|bitcoin|bitget|bnb|bsc|bybit|cetus|coin|compound|crypto|curve|dapp|defi|deribit|dydx|eos|eth|filecoin|ftx|gate|gemini|heco|huobi|kraken|kucoin|maker|mexc|nft|okex|okx|optimism|pancake|poloniex|solana|sui|sushi|synthetix|tether|tron|uniswap|wallet|zksync)[a-z0-9-]*\\.[a-z.]+$",
-              "^(?:.*\\.)?(?:block|chain|dex|pool|scan|swap|token|trade)[a-z0-9-]*\\.(?:com|io|net|org|cc|co|fi|xyz|app|pro|network|finance|exchange|zone)$",
-              "^(?:.*\\.)?(?:ably|abs|acinq|aex|agkn|aimoon|alphafi|ans-stats|appsflayer|apy999|ardrive|asproex|bibox|bisq|cbeci|cex|chippay|circle|clearpool|cohere|crashlytics|crunchbase|cyberx|dcabtc|debank|digiconomist|dovemetrics|dropsearn|duneanalytics|earni|ewa|flashbots|fragment|glassnode|hbabit|icodrops|inmobi|inner-active|intotheblock|ip-api|ipfs|jaxx|kochava|korbit|liquid|llama|maple|masternodes|mdex|mobilefuse|nansen|navi|nexo|nexus|nonfungible|nyctale|onekey|osl|parity|paxful|phantom|raydium|save|siftscience|slush|sm|sns|stateofthedapps|sunswap|talkatone|tenor|theblock|thegraph|thetie|tktn|traderjoexyz|tradingview|trustwallet|unisat|vfat|viewbase|vitalik|volo|walrus|watchtheburn|wbtc|wynd|zapper|zb)\\.[a-z.]+$",
-              "^(?:.*\\.)?konami(?:\\.[a-z.]+)?$",
-              "^.*\\.(?:amazonaws\\.com|cloudfront\\.net|myqcloud\\.com|forter\\.com|amazontrust\\.com|codefi\\.network)$"
-            ]
-          }
-        ]
+        "tag": "V5-✈️ 电报",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-telegram.srs"
       },
       {
-        "type": "inline",
-        "tag": "APP-🇨🇳 China",
-        "rules": [{
-            "package_name_regex": [
-              "^(?:cn\\.com\\.|cn\\.gov\\.|cn\\.|com\\.|net\\.|tv\\.|space\\.|me\\.|andes\\.)(?:ai|alibaba|aliyun|amap|autonavi|baidu|bankcomm|benqu|bsp|bytedance|cebbank|chinamworld|chinatelecom|chinaums|chsi|cib|cmb|cmbc|cmbchina|cmcc|codoon|coloros|ct|cyberIdentity|danmaku|deepseek|duokan|easyinvoice|ecitic|eg|eusoft|evecom|fido|finshell|gacne|gov|greenpoint|hhbpay|hl|huaxiaozhu|icbc|idaodan|ifeng|intsig|jingdong|kuaishou|lalamove|larus|lbe|lemon|mfashiongallery|mi|miaotui|milink|mipay|miui|mobiletools|MobileTicket|mxtech|nearme|netease|oplus|opos|oppo|pa|pingan|qihoo|sankuai|sdu|sgcc|sina|smile|sohu|ss|st|taobao|ted|tmri|twx|unionpay|wapi|wps|xiaomi|ximalaya|xingin|xinzhi|xmgov|xunmeng|yitong|zhaopin|zhihu|zhouzhuo810)(?:\\..+)?$",
-              "^com\\.tencent\\.(?:android|hunyuan|mm|mobileqq|soter|wemeet)(?:\\..+)?$",
-              "^com\\.heytap\\.(?:accessory|cloud|htms|market|mcs|member|music|mydevices|openid|opluscarlink|pictorial|quicksearchbox|reader|speechassist|tas|themestore|yoli)$",
-              "^(?:android|oplus|com\\.haixia|com\\.newcall|com\\.Qunar|com\\.unionpay|com\\.icbc|ctrip\\.android\\..+|miui\\..+)$",
-              "^com\\.android\\.(?:bankabc|bips|bluetooth|calendar|camera|cellbroadcastservice|contacts|deskclock|DeviceAsWebcam|dynsystem|email|fileexplorer|htmlviewer|incallui|inputdevices|intentresolver|keychain|launcher|localtransport|location\\.fused|mms(?:\\.service)?|nfc|ons|packageinstaller|phone|photopicker|printspooler|providers\\.(?:calendar|settings|telephony)|provision|quicksearchbox|server\\.telecom|settings|soundrecorder|stk|systemui|thememanager|updater|wallpaper\\.livepicker)$",
-              "^(?:com\\.qti\\.(?:dpmserviceapp|qualcomm\\..+)|com\\.qualcomm\\.(?:atfwd|location|qti\\.(?:dynamicddsservice|services\\.systemhelper|uceShimService|xrvd\\.service))|vendor\\.qti\\.(?:data\\.ntnsatapp|frameworks\\.utils|imsdatachannel))$"
-            ]
-          },
-          {
-            "process_path_regex": "(?i)^(.*[\\\\/])?(Tencent|Alibaba|Baidu|NetEase|ByteDance|Kingsoft|360|Xunlei|Thunder Network|Sogou|iQIYI|Bilibili|DingTalk|Youku|Kugou|Kuwo)([\\\\/].*)?$"
-          }
-        ]
+        "tag": "V5-📞 虚拟SIM",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-talkatone.srs"
+      },
+      {
+        "tag": "V5-🪙 币安",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-binance.srs"
+      },
+      {
+        "tag": "V5-🎮 K社",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-konami.srs"
+      },
+      {
+        "tag": "V5-🇨🇳 ChinaAPP",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-ChinaAPP.srs"
       }
     ]
   }
