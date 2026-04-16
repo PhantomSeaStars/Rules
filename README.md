@@ -14,10 +14,11 @@
         "format": "binary",
         "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/geoip-talkatone.srs",
         "download_detour": "☘️ 默认"
-      },
+      }
 ```
 
-基于sing-box-1.14.0-alpha.12参考配置，因为开始倒腾正则表达式，规则量小到足以让我写进配置文件，供参考
+基于sing-box-1.14.0-alpha.12参考配置，现在我自己并不使用这些曾经写的规则集，没有维护动力，这些文件作为历史记录保留。
+因为开始倒腾正则表达式，规则量小到足以让我写进配置文件本身，挺好用的供参考。
 
 ```
 {
