@@ -1,0 +1,12 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "package_name": [
+        "com.taobao.taobao",
+        "com.eg.android.AlipayGphone",
+        "com.alibaba.wireless"
+      ]
+    }
+  ]
+}
