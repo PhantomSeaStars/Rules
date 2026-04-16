@@ -5,14 +5,14 @@
         "tag": "site-📞 Talkatone",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/geosite-talkatone.srs",
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/geosite-talkatone.srs",
         "download_detour": "☘️ 默认"
       },
       {
         "tag": "IP-📞 Talkatone",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/geoip-talkatone.srs",
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/geoip-talkatone.srs",
         "download_detour": "☘️ 默认"
       }
 ```
@@ -428,43 +428,43 @@
         "tag": "V5-💵 HSBC",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-hsbc.srs"
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/V5-hsbc.srs"
       },
       {
         "tag": "V5-▶️ 油管",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-youtube.srs"
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/V5-youtube.srs"
       },
       {
         "tag": "V5-✈️ 电报",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-telegram.srs"
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/V5-telegram.srs"
       },
       {
         "tag": "V5-📞 虚拟SIM",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-talkatone.srs"
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/V5-talkatone.srs"
       },
       {
         "tag": "V5-🪙 币安",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-binance.srs"
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/V5-binance.srs"
       },
       {
         "tag": "V5-🎮 K社",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-konami.srs"
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/V5-konami.srs"
       },
       {
         "tag": "V5-🇨🇳 ChinaAPP",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/私有域名/Rules/main/V5-ChinaAPP.srs"
+        "url": "https://raw.githubusercontent.com/PhantomSeaStars/Rules/main/V5-ChinaAPP.srs"
       }
     ]
   }
