@@ -1,0 +1,14 @@
+{
+  "version": 5,
+  "rules": [
+{
+  "domain_regex": [
+    "^(?:.*\\.)?(?:ad|ads|adv|adx)(?:[0-9]+|-[a-z0-9-]+)?\\.[a-z.]+$",
+    "^(?:.*\\.)?(?:log|logs|stat|stats|track|pixel|click|trace|beacon|crash)[0-9]*\\.[a-z.]+$",
+    "^(?:.*\\.)?(?:advert|advertising|admob|adsense|adwords|adserver|adsystem|adservice|marketing|promot|doubleclick|pangolin|pubmatic|taboola|criteo|outbrain|rubiconproject|googlesyndication|googletag|googlead|google-analytics|1rx|2mdn|openx|adnxs|adtech|applovin|appsflyer|moatads|scorecardresearch|e-planning|inmobi|kochava|mobilefuse|supersonic|unityads)[a-z0-9-]*\\.[a-z.]+$",
+    "^(?:.*\\.)?(?:analytics|tracking|tracker|statis|metrica|metrics|sentry|crashlytics|bugly|telemetry|umeng|snssdk|zijieapi|yabs|yango|ozon|mindbox|carrotquest|carrottrack|wildberries|baidustatic|cpro|nsclick|simba|alimama|gdt|pingjs|pangle|adash|eclick|cnzz|growingio|ipinyou|kuyun|reyun|shuzilm|sigmob|webvisor|zhuge|adjust)[a-z0-9-]*\\.[a-z.]+$",
+    "^speed\\.(?:coe|open)\\.ad\\.[a-z]{2,6}\\.prod\\.hosts\\.ooklaserver\\.net$"
+  ]
+}
+  ]
+}
