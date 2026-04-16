@@ -1,0 +1,19 @@
+{
+  "version": 5,
+  "rules": [
+    {
+      "package_name_regex": [
+        "^(.*\\.)?(talkatone|binance|konami|co\\.ponos)(\\..*)?$"
+      ]
+    },
+    {
+      "domain_regex": [
+        "^(?:.*\\.)?(?:1inch|aave|arbitrum|arweave|avax|binance|bitcoin|bitget|bnb|bsc|bybit|cetus|coin|compound|crypto|curve|dapp|defi|deribit|dydx|eos|eth|filecoin|ftx|gate|gemini|heco|huobi|kraken|kucoin|maker|mexc|nft|okex|okx|optimism|pancake|poloniex|solana|sui|sushi|synthetix|tether|tron|uniswap|wallet|zksync)[a-z0-9-]*\\.[a-z.]+$",
+        "^(?:.*\\.)?(?:block|chain|dex|pool|scan|swap|token|trade)[a-z0-9-]*\\.(?:com|io|net|org|cc|co|fi|xyz|app|pro|network|finance|exchange|zone)$",
+        "^(?:.*\\.)?(?:ably|abs|acinq|aex|agkn|aimoon|alphafi|ans-stats|appsflayer|apy999|ardrive|asproex|bibox|bisq|cbeci|cex|chippay|circle|clearpool|cohere|crashlytics|crunchbase|cyberx|dcabtc|debank|digiconomist|dovemetrics|dropsearn|duneanalytics|earni|ewa|flashbots|fragment|glassnode|hbabit|icodrops|inmobi|inner-active|intotheblock|ip-api|ipfs|jaxx|kochava|korbit|liquid|llama|maple|masternodes|mdex|mobilefuse|nansen|navi|nexo|nexus|nonfungible|nyctale|onekey|osl|parity|paxful|phantom|raydium|save|siftscience|slush|sm|sns|stateofthedapps|sunswap|talkatone|tenor|theblock|thegraph|thetie|tktn|traderjoexyz|tradingview|trustwallet|unisat|vfat|viewbase|vitalik|volo|walrus|watchtheburn|wbtc|wynd|zapper|zb)\\.[a-z.]+$",
+        "^(?:.*\\.)?konami(?:\\.[a-z.]+)?$",
+        "^.*\\.(?:amazonaws\\.com|cloudfront\\.net|myqcloud\\.com|forter\\.com|amazontrust\\.com|codefi\\.network)$"
+      ]
+    }
+  ]
+}

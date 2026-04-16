@@ -1,0 +1,14 @@
+{
+  "version": 5,
+  "rules": [
+    {
+      "package_name_regex": "^.+\\.(?:telegram\\..+|youtube)$"
+    },
+    {
+      "domain_regex": [
+        "^(?:.*\\.)?(?:cdn-telegram|telegram[a-z-]*|(?:wide-|with)?youtube[a-z-]*)\\.[a-z.]+$",
+        "^(?:.*\\.)?(?:comments\\.app|contest\\.com|fragment\\.com|ggpht\\.[a-z.]+|googlevideo\\.com|graph\\.org|quiz\\.directory|t\\.me|tdesktop\\.com|telega\\.one|telegra\\.ph|telesco\\.pe|tg\\.dev|ton\\.org|tx\\.me|usercontent\\.dev|youtu\\.be|yt\\.be|yt3\\.googleusercontent\\.com|ytimg\\.com)$"
+      ]
+    }
+  ]
+}

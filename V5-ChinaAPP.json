@@ -1,0 +1,18 @@
+{
+  "version": 5,
+  "rules": [
+    {
+      "package_name_regex": [
+        "^(?:cn\\.com\\.|cn\\.gov\\.|cn\\.|com\\.|net\\.|tv\\.|space\\.|me\\.|andes\\.)(?:ai|alibaba|aliyun|amap|autonavi|baidu|bankcomm|benqu|bsp|bytedance|cebbank|chinamworld|chinatelecom|chinaums|chsi|cib|cmb|cmbc|cmbchina|cmcc|codoon|coloros|ct|cyberIdentity|danmaku|deepseek|duokan|easyinvoice|ecitic|eg|eusoft|evecom|fido|finshell|gacne|gov|greenpoint|hhbpay|hl|huaxiaozhu|icbc|idaodan|ifeng|intsig|jingdong|kuaishou|lalamove|larus|lbe|lemon|mfashiongallery|mi|miaotui|milink|mipay|miui|mobiletools|MobileTicket|mxtech|nearme|netease|oplus|opos|oppo|pa|pingan|qihoo|sankuai|sdu|sgcc|sina|smile|sohu|ss|st|taobao|ted|tmri|twx|unionpay|wapi|wps|xiaomi|ximalaya|xingin|xinzhi|xmgov|xunmeng|yitong|zhaopin|zhihu|zhouzhuo810)(?:\\..+)?$",
+        "^com\\.tencent\\.(?:android|hunyuan|mm|mobileqq|soter|wemeet)(?:\\..+)?$",
+        "^com\\.heytap\\.(?:accessory|cloud|htms|market|mcs|member|music|mydevices|openid|opluscarlink|pictorial|quicksearchbox|reader|speechassist|tas|themestore|yoli)$",
+        "^(?:android|oplus|com\\.haixia|com\\.newcall|com\\.Qunar|com\\.unionpay|com\\.icbc|ctrip\\.android\\..+|miui\\..+)$",
+        "^com\\.android\\.(?:bankabc|bips|bluetooth|calendar|camera|cellbroadcastservice|contacts|deskclock|DeviceAsWebcam|dynsystem|email|fileexplorer|htmlviewer|incallui|inputdevices|intentresolver|keychain|launcher|localtransport|location\\.fused|mms(?:\\.service)?|nfc|ons|packageinstaller|phone|photopicker|printspooler|providers\\.(?:calendar|settings|telephony)|provision|quicksearchbox|server\\.telecom|settings|soundrecorder|stk|systemui|thememanager|updater|wallpaper\\.livepicker)$",
+        "^(?:com\\.qti\\.(?:dpmserviceapp|qualcomm\\..+)|com\\.qualcomm\\.(?:atfwd|location|qti\\.(?:dynamicddsservice|services\\.systemhelper|uceShimService|xrvd\\.service))|vendor\\.qti\\.(?:data\\.ntnsatapp|frameworks\\.utils|imsdatachannel))$"
+      ]
+    },
+    {
+      "process_path_regex": "(?i)^(.*[\\\\/])?(Tencent|Alibaba|Baidu|NetEase|ByteDance|Kingsoft|360|Xunlei|Thunder Network|Sogou|iQIYI|Bilibili|DingTalk|Youku|Kugou|Kuwo)([\\\\/].*)?$"
+    }
+  ]
+}

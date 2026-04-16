@@ -1,0 +1,11 @@
+{
+  "version": 5,
+  "rules": [
+    {
+      "package_name_regex": "^(.*\\.)?hsbc[a-z-]*(\\..*)?$"
+    },
+    {
+      "domain_regex": "^(?:.*\\.)?hsbc(?:[a-z-]*\\.[a-z.]+)?$"
+    }
+  ]
+}
