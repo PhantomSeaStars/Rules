@@ -1,0 +1,17 @@
+{
+  "version": 5,
+  "rules": [
+    {
+      "package_name_regex": [
+        "^com\\.ss\\.android\\.(?:ugc|tt)\\..+$$",
+        "^(.*\\.)?zhiliaoapp(\\..*)?$"
+      ]
+    },
+    {
+      "domain_regex": [
+        "^(?:.*\\.)?(?:(?:(?:p[0-9]+-)?tik-?tok[a-z0-9-]*|byte(?:dapm|oversea)|tt(?:cdn|livecdn|overseaus|wstatic)[a-z0-9-]*|muscdn)\\.[a-z.]+|musical\\.ly)$",
+        "^(?:.*\\.)?roovza[a-z0-9-.]*appsflyersdk\\.com$"
+      ]
+    }
+  ]
+}
