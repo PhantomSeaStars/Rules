@@ -1,0 +1,15 @@
+{
+  "version": 5,
+  "rules": [
+    {
+      "package_name_regex": [
+        "^(.*\\.)?twitter(\\..*)?$"
+      ]
+    },
+    {
+      "domain_regex": [
+        "^(?:.*\\.)?(?:(?:ads-twitter|cms-twdigitalassets|periscope|tellapart|tweetdeck|tw(?:img|itpic|trdns|ttr|vid)|twitter[a-z0-9-]*)\\.[a-z.]+|pscp\\.tv|t\\.co|vine\\.co|x\\.com)$"
+      ]
+    }
+  ]
+}

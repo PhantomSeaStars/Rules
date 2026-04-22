@@ -1,0 +1,18 @@
+{
+  "version": 5,
+  "rules": [
+    {
+      "package_name_regex": [
+        "^(.*\\.)?facebook(\\..*)?$"
+      ]
+    },
+    {
+      "domain_regex": [
+        "^(?:.*\\.)?[a-z0-9-]*facebook[a-z0-9-]*\\.[a-z.]+$",
+        "^(?:.*\\.)?(?:fb\\.(?:com|me|gg|watch|careers)|fb(?:cdn|sbx|url|idb|inc|reg|rpms|wat|workmail|home|bmarket|feedback|boostyourbusiness|thirdpartypixel)[a-z0-9-]*\\.[a-z.]+)$",
+        "^(?:.*\\.)?(?:internet|liverail|terragraph|redkix|rocksdb|thefind|crowdtangle|(?:mark)?zuckerberg|friendfeed|friendfed|freindfeed|workplace(?:usecases)?|gameroom|klik|groups|newsfeed|nextstop|online-deals|opencreate|toplayerserver|atdmt2|atlasdmt|atlasonepoint|celebgramme|expresswifi|freebasics|freeb|freebs|midentsolutions|sportstream|worldhack|i)\\.[a-z.]+$",
+        "^(?:.*\\.)?(?:acebooik|acebook|dacebook|faacebok|faacebook|faasbook|facbebook|facbeok|facboo|facbook|facbool|facboox|faccebook|faccebookk|facdbook|facdebook|face-book|faceabook|facebboc|facebbook|facebboook|facebcook|facebdok|facebgook|facebhook|facebkkk|facebo-ok|faceboak|facebock|facebocke|facebof|faceboik|facebok|facebokbook|facebokc|facebokk|facebokok|faceboks|facebol|facebolk|facebomok|faceboo|facebooa|faceboob|faceboobok|facebooc|faceboock|facebood|facebooe|faceboof|facebooi|facebooik|facebooj|facebool|facebooll|faceboom|faceboon|faceboonk|faceboooik|faceboook|faceboop|faceboot|faceboox|facebopk|facebpook|facebuk|facebuok|facebvook|facebyook|facebzook|facecbgook|facecbook|facecook|facedbook|faceebok|faceebook|faceebot|facegbok|facegbook|faceobk|faceobok|faceobook|faceook|facerbooik|facerbook|facesbooc|facesounds|facetook|facevbook|facewbook|facewook|facfacebook|facfebook|fackebook|facnbook|facrbook|facvebook|facwebook|facxebook|fadebook|faebok|faebook|faebookc|faeboook|faecebok|faesebook|fafacebook|faicbooc|fasebokk|fasebook|faseboox|favebook|faycbok|fbacebook|fcacebook|fcaebook|fcebook|fcebookk|fcfacebook|fdacebook|feacboo|feacbook|feacbooke|feacebook|fecbbok|fecbooc|fecbook|feceboock|fecebook|feceboox|fececbook|feook|ferabook|fescebook|fesebook|ffacebook|fgacebook|ficeboock|fmcebook|fnacebook|fosebook|fpacebook|fqcebook|fracebook|fsacebok|fscebook|gacebook|gfacecbook|wwwfacebok|wwwmfacebook)\\.[a-z.]+$"
+      ]
+    }
+  ]
+}
