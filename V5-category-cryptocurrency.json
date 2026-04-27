@@ -8,11 +8,10 @@
     },
     {
       "domain_regex": [
-        "^(?:.*\\.)?(?:arweave|binance|bingx|bitcoin|bitget|bitopro|blockfrost|bnb|bsc|bybit|coin|crypto|dapp|defi|deribit|doge|eos|eth|filecoin|ftx|gate|heco|huobi|kraken|kucoin|metamask|mexc|moonpay|moonshot|mystenlabs|nft|okex|oklink|okx|opensea|optimism|pancake|paxful|phantom|poloniex|poly|ripple|satoshi|solana|sui|sushi|synthetix|tether|tron|uniswap|wallet|zksync)[a-z0-9-]*\\.[a-z.]+$",
+        "^(?:.*\\.)?(?:1inch|aave|arbitrum|arweave|avax|binance|bitcoin|bitget|bnb|bsc|bybit|cetus|coin|compound|crypto|curve|dapp|defi|deribit|dydx|eos|eth|filecoin|ftx|gate|gemini|heco|huobi|kraken|kucoin|maker|mexc|nft|okex|okx|optimism|pancake|poloniex|solana|sui|sushi|synthetix|tether|tron|uniswap|wallet|zksync)[a-z0-9-]*\\.[a-z.]+$",
         "^(?:.*\\.)?(?:block|chain|dex|pool|scan|swap|token|trade)[a-z0-9-]*\\.(?:com|io|net|org|cc|co|fi|xyz|app|pro|network|finance|exchange|zone)$",
-        "^(?:.*\\.)?(?:1inch|1ml|aave|abs|acinq|aex|aimoon|alphafi|ans-stats|ao-testnet|apy999|ar-io|ardrive|asproex|avax|bibox|bisq|bitbank|bitderiv|bitflyer|bitmex|bitnodes|bitquick|bitsquare|bitstamp|bittrex|bloks|boba|cbeci|cetus|cex|chainalysis|chainbroker|chippay|circle|clearpool|cmcap|commonservice|dcabtc|debank|defieye|defipulse|defirate|devcon|dextools|digiconomist|dovemetrics|dropsearn|duneanalytics|dydx|earni|ewapool|f2pool|flashbots|fragment|galxe|glassnode|gmgn|guardarian|hashflow|hbabit|hbfile|icodrops|infura|intotheblock|invity|ipfs|jaxx|korbit|liquid|llama|loanscan|localbitcoins|makerdao|maple|masternodes|mdex|metalpha|nansen|naviprotocol|nexo|nexus|nyctale|onekey|osl|parity|polymarket|raydium|redotpay|saasexch|save|slush|sm|sns|stateofthedapps|stealthex|straitsx|theblock|thegraph|thetie|traderjoexyz|tradingview|trezor|truefi|unisat|vfat|viewbase|vitalik|volo|walrus|watchtheburn|wbtc|web3modal|wintermute|wisekey|wynd|xal|yingwangtech|zapper|zb|zkscan)\\.[a-z.]+$",
-        "^(?:.*\\.)?gemini\\.(?!.*google)[a-z0-9-.]+$",
-        "^(?:.*\\.)?(?:amazonaws\\.com|cloudfront\\.net|myqcloud\\.com|amazontrust\\.com|forter\\.com|siftscience\\.com|appsflayer\\.com|braze\\.eu|crunchbase\\.com|ably\\.io)$"
+        "^(?:.*\\.)?(?:ably|abs|acinq|aex|aimoon|alphafi|ans-stats|appsflayer|apy999|ardrive|asproex|bibox|bisq|cbeci|cex|chippay|circle|clearpool|crunchbase|cyberx|dcabtc|debank|digiconomist|dovemetrics|dropsearn|duneanalytics|earni|ewa|flashbots|fragment|glassnode|hbabit|icodrops|intotheblock|ipfs|jaxx|korbit|liquid|llama|maple|masternodes|mdex|nansen|navi|nexo|nexus|nonfungible|nyctale|onekey|osl|parity|paxful|phantom|raydium|save|siftscience|slush|sm|sns|stateofthedapps|sunswap|theblock|thegraph|thetie|traderjoexyz|tradingview|trustwallet|unisat|vfat|viewbase|vitalik|volo|walrus|watchtheburn|wbtc|wynd|zapper|zb)\\.[a-z.]+$",
+        "^.*\\.(?:amazonaws\\.com|cloudfront\\.net|myqcloud\\.com|forter\\.com|amazontrust\\.com|codefi\\.network)$"
       ]
     }
   ]
