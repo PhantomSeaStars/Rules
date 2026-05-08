@@ -3,6 +3,7 @@
   "rules": [
     {
       "package_name_regex": [
+        "^(?:.*\\.cn|.*\\.gov\\..*)$",
         "^(?:com\\.(?:miui|xiaomi|mi|milink|mipay|duokan|lbe)\\.[a-zA-Z0-9_.]+|miui\\.[a-zA-Z0-9_.]+)$",
         "^(?:com\\.(?:oplus|coloros|heytap|oppo|nearme|opos|finshell|huawei|honor|vivo|bbk|meizu|oneplus)\\.[a-zA-Z0-9_.]+|oplus|andes\\.oplus\\.[a-zA-Z0-9_.]+|net\\.oneplus\\.[a-zA-Z0-9_.]+)$",
         "^(?:com\\.android\\.(?:bankabc|bips|bluetooth|browser|calendar|camera|cellbroadcastservice|contacts|deskclock|DeviceAsWebcam|dynsystem|email|fileexplorer|htmlviewer|incallui|inputdevices|intentresolver|keychain|launcher|localtransport|location\\.fused|mms(?:\\.service)?|nfc|ons|packageinstaller|phone|photopicker|printspooler|providers\\.[a-zA-Z0-9_.]+|provision|quicksearchbox|server\\.telecom|settings|soundrecorder|stk|systemui|thememanager|updater|wallpaper\\.livepicker)|(?:com\\.qualcomm|com\\.qti|vendor\\.qti)\\.[a-zA-Z0-9_.]+|android)$",
