@@ -483,7 +483,12 @@
         "vendor.qti.imsrcs",
         "com.fenbi.android.solar",
         "com.youdao.translator",
-        "com.miui.face"
+        "com.miui.face",
+        "com.esscard.esscardapp",
+        "com.service.android.gov.cn",
+        "cn.gov.chinatax.gt4.app",
+        "cn.gov.tax.its",
+        "cn.hsa.app"
       ]
     }
   ]
